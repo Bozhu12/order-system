@@ -1,8 +1,8 @@
 # 方案弃用 profiles
-#spring:
-#    profiles:
-#        active: test
 spring:
-    config:
-        activate:
-            on-profile: test
+    profiles:
+        active: test
+#spring:
+#    config:
+#        activate:
+#            on-profile: test

@@ -1,4 +1,4 @@
-package com.sans.utils.status;
+package com.sans.status;
 
 /**
  * 返回状态码

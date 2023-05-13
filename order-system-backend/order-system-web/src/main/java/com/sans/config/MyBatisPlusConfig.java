@@ -8,10 +8,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author Sans
+* @author Sans
  */
-@Configuration
-@MapperScan("com.sans.*.*.mapper")
+@Configuration //表明MyBatisPlusConfig是一个配置类
+@MapperScan("com.sans.*.*.mapper") //配置扫描的dao/mapper接口
 public class MyBatisPlusConfig {
     // 最新版
     @Bean
