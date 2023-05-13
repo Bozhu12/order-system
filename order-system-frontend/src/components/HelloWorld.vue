@@ -1,25 +1,39 @@
 <script setup lang="ts">
-import {ref} from 'vue'
-
-const msg = ref('kjlkwsrjl')
+import { testStore } from "@/store/test/index";
+//局部使用的方式，需要单独引入
+import { Edit } from "@element-plus/icons-vue";
+import { computed } from "vue";
+//获取store
+const store = testStore();
+//改变store里面的count的值
+const addBtn = () => {
+  //store.conunt++
+  // store.setCount(++store.conunt)
+  // store.$patch({
+  //   conunt:++store.conunt
+  // })
+  store.$patch((state) => {
+    state.conunt = ++state.conunt;
+  });
+};
+//computed取值
+const count = computed(()=>{
+  return store.conunt
+})
 </script>
 
 <template>
-    <h1>{{ msg }}</h1>
-    <el-row class="mb-4">
-        <el-button>Default</el-button>
-        <el-button type="primary">Primary</el-button>
-        <el-button type="success">Success</el-button>
-        <el-button type="info">Info</el-button>
-        <el-button type="warning">Warning</el-button>
-        <el-button type="danger">Danger</el-button>
-    </el-row>
-
-    <el-icon>
-        <Edit/>
-    </el-icon>
-
+  <el-row class="mb-4">
+    <el-button @click="addBtn" type="primary">Primary</el-button>
+  </el-row>
+  <div>{{ count }}</div>
+  <el-icon>
+    <Edit />
+  </el-icon>
 </template>
 
 <style scoped>
+.read-the-docs {
+  color: #888;
+}
 </style>

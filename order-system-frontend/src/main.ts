@@ -1,23 +1,28 @@
 import { createApp } from 'vue'
-import './style.css'
+import { createPinia } from 'pinia'
+import zhCn from 'element-plus/es/locale/lang/zh-cn'
+// import './style.css'
+//echarts
+import * as echarts from 'echarts'
+import router from './router'
 import App from './App.vue'
-import router from "./router";
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
-import * as ElementPlusIconsVue from '@element-plus/icons-vue'
-import {createPinia} from "pinia";
-
-const app = createApp(App)
+import myConfirm from './utils/myConfirm'
+// import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+// createApp(App).mount('#app')
+const pinia = createPinia()
+const app = createApp(App);
 
 app.use(router)
-
-const pinia = createPinia()
-app.use(pinia)
-
-app.use(ElementPlus)
-// 图标全部注册
-for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
-    app.component(key, component)
-}
-
-app.mount('#app')
+    .use(ElementPlus, {
+    locale: zhCn,
+  }).use(pinia)
+    .mount('#app')
+//全局注册图标，在页面就可以直接使用
+// for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+//   app.component(key, component)
+// }
+//全局注册
+app.config.globalProperties.$myconfirm = myConfirm
+app.config.globalProperties.$echarts = echarts;

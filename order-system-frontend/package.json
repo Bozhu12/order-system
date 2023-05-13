@@ -9,12 +9,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@wangeditor/editor": "^5.1.21",
+    "@wangeditor/editor-for-vue": "^5.1.12",
     "@types/node": "^20.1.3",
     "axios": "^1.4.0",
     "element-plus": "^2.3.4",
     "pinia": "^2.0.36",
     "vue": "^3.2.47",
-    "vue-router": "4"
+    "vue-router": "4",
+    "echarts": "^5.4.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.1.0",
