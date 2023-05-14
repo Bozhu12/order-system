@@ -44,5 +44,6 @@ public class ImageUploadController {
             return  null;
         }
         return ResultUtils.success("成功", "/images" + Url);
+        System.out.println("我是大帅哥易方程");
     }
 }

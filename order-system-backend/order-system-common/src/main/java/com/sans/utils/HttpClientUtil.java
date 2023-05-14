@@ -136,7 +136,7 @@ public class HttpClientUtil {
                 e.printStackTrace();
             }
         }
-
+        System.out.println("我是大帅哥易方程");
         return resultString;
     }
 }
