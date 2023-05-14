@@ -1,5 +1,5 @@
-// const baseUrl = 'http://localhost:8099'
-const baseUrl = 'http://192.168.31.70:8089'  
+const baseUrl = 'http://localhost:8089'
+// const baseUrl = 'http://192.168.31.70:8089'  
 const http = (options = {}) => {
     return new Promise((resolve, reject) => {
         uni.request({

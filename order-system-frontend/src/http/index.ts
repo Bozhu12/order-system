@@ -3,8 +3,8 @@ import { ElMessage } from 'element-plus';
 //axios请求的配置
 
 const config = {
-    baseURL: 'http://localhost:8089',
-    // baseURL: '/api',
+    // baseURL: 'http://localhost:8089',
+    baseURL: '/api',
     timeout: 10000
 }
 //返回值的数据类型
